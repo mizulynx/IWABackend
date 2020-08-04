@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="jakubborkowski:war">
+    <output-path>$PROJECT_DIR$/demoForms/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>jakubborkowski</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="jakubborkowski-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="jakubborkowski:war exploded" />
+    </root>
+  </artifact>
+</component>
