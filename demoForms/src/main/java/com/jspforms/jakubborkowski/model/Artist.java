@@ -12,16 +12,17 @@ public class Artist {
 
     @Id
     @GeneratedValue
-    private int id;
+    private long id;
     private int votes;
     private String band;
     private String genre;
     private int approved;
 
     public Artist() {
+
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -57,7 +58,7 @@ public class Artist {
         this.votes = votes;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 }

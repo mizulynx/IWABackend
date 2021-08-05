@@ -4,8 +4,12 @@ import com.jspforms.jakubborkowski.model.Artist;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-    @Repository
+import javax.transaction.Transactional;
+
+@Repository
     public interface ArtistRepository extends JpaRepository<Artist, Long> {
-        Artist findById(int id);
-        Artist deleteById(int id);
+        Artist findById(long id);
+        Artist findAllByGenre(String genre);
+        @Transactional
+        Artist deleteById(long id);
     }

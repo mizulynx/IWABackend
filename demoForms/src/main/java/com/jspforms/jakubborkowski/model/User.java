@@ -13,17 +13,33 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private int choice;
+    private long id;
     @NotBlank
     @Size(min=3, max = 50)
     private String username;
+    private int choice;
 
+    public int getChoice() {
+        return choice;
+    }
+
+    public void setChoice(int choice) {
+        this.choice = choice;
+    }
+
+    public int getVotes() {
+        return votes;
+    }
+
+    public void setVotes(int votes) {
+        this.votes = votes;
+    }
+
+    private int votes;
     @NotBlank
     @Size(min=6, max = 100)
     private String password;
 
-    int votes;
 
     @ManyToMany(fetch = FetchType.EAGER)
     private Set<Role> roles = new HashSet<>();
@@ -39,11 +55,11 @@ public class User {
         this.choice = 0;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -55,13 +71,7 @@ public class User {
         this.username = username;
     }
 
-    public int getVotes() {
-        return votes;
-    }
 
-    public void setVotes(int votes) {
-        this.votes = votes;
-    }
 
     public String getPassword() {
         return password;
